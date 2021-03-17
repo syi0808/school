@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .book {
+        width: 450px;
+        height: 700px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .bookHiddenWrapper1 {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        transform-origin: 0% 0%;
+        transform: translate(200px, -200px) rotate(45deg);
+        z-index: 100;
+      }
+
+      .bookHiddenWrapper {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        transform-origin: 0% 0%;
+        transform: translate(200px, -200px) rotate(45deg);
+      }
+
+      .asd {
+        position: absolute;
+        width: 450px;
+        height: 700px;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJU_z0HEYi0WF5AZS8XOlyoi6zJk8cB9y2zQ&usqp=CAU");
+        transform-origin: 0% 0%;
+        transform: rotate(-45deg) translate(-200px, 200px);
+      }
+
+      .bookLook {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+      }
+
+      .qwe {
+        width: 450px;
+        height: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("https://blog.hubspot.com/hubfs/books-every-aspiring-ceo-should-read.jpg");
+        transform-origin: 0% 0%;
+        transform: rotate(-45deg) translate(200px, -450px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book">
+      <div class="bookHiddenWrapper1">
+        <div class="bookLook">
+          <div class="qwe"></div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="bookHiddenWrapper">
+          <div class="asd"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const _ = document.getElementsByClassName("bookHiddenWrapper")[0];
+      const _1 = document.getElementsByClassName("bookHiddenWrapper1")[0];
+      const they = document.getElementById("qwe");
+      _.style.height = `${Math.round(Math.sqrt(450 * 450 + 700 * 700))}px`;
+      _.style.width = `${Math.round(Math.sqrt(450 * 450 + 700 * 700))}px`;
+      _1.style.height = `${Math.round(Math.sqrt(450 * 450 + 700 * 700))}px`;
+      _1.style.width = `${Math.round(Math.sqrt(450 * 450 + 700 * 700))}px`;
+    </script>
+  </body>
+</html>

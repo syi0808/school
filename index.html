@@ -51,7 +51,8 @@
         transform-origin: top;
         transform: rotateX(-90deg);
         background-image: linear-gradient(to bottom, transparent, white),
-          url("https://cdn.pixabay.com/photo/2016/12/11/23/47/abstract-1900586_960_720.jpg");
+          url("http://www.city-data.com/forum/attachments/house/17061d1206740891-removal-acoustic-ceiling-tiles-acoustic-tile.jpg");
+        background-size: 384px;
       }
 
       .left {
@@ -62,8 +63,8 @@
         transform-origin: left;
         transform: rotateY(90deg);
         background-image: linear-gradient(to right, transparent, white),
-          url("https://cdn.pixabay.com/photo/2016/12/11/23/47/abstract-1900586_960_720.jpg");
-        padding: 50px 100px;
+          url("https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fA%3D%3D&w=1000&q=80");
+        padding: 50px 100px 0;
       }
 
       .right {
@@ -74,11 +75,13 @@
         transform-origin: right;
         transform: rotateY(-90deg);
         background-image: linear-gradient(to left, transparent, white),
-          url("https://cdn.pixabay.com/photo/2016/12/11/23/47/abstract-1900586_960_720.jpg");
+          url("https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fA%3D%3D&w=1000&q=80");
       }
 
       .door {
-        background: brown;
+        background-image: url("https://www.magnetstreet.com/stores/html/schools/images/security/security-door-window-wood-metal-frame.jpg");
+        background-size: cover;
+        background-position: 0 -50px;
         width: 500px;
         height: 100%;
         transform-style: preserve-3d;
@@ -88,7 +91,7 @@
       }
 
       .door:hover {
-        transform: rotateY(90deg);
+        transform: rotateY(90deg) scaleZ(2);
       }
 
       .doorA {
@@ -96,10 +99,29 @@
         left: 100px;
         top: 50px;
         width: 500px;
-        height: 100%;
+        height: calc(100% - 50px);
+        background: white;
       }
 
-      .doorA:hover + .door {
+      .doorA:hover ~ .door {
+        transform: rotateY(90deg);
+      }
+
+      .doorA:hover ~ .arrow {
+        transform: translateY(-50%) rotateY(-90deg) translateX(100px);
+      }
+
+      .arrow {
+        position: absolute;
+        font-size: 30px;
+        top: 50%;
+        left: 300px;
+        transform: translateY(-50%) rotateY(-90deg) translateX(-100px);
+        transition: all 0.2s ease-out;
+        cursor: pointer;
+      }
+
+      .arrow:hover ~ .door {
         transform: rotateY(90deg);
       }
     </style>
@@ -111,6 +133,7 @@
       <div class="left g">
         <div class="doorA"></div>
         <div class="door"></div>
+        <p class="arrow">클릭</p>
       </div>
       <div class="right g"></div>
     </div>
